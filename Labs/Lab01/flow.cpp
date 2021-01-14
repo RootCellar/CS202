@@ -36,12 +36,14 @@ int main() {
   while(number % 7 != 0) {
     ++number;
   }
+  cout << number << endl;
 
   //Do while
   number = 54;
   do {
     ++number;
   }while(number % 9 != 0);
+  cout << number << endl;
 
   int choice;
   cout << "Choose a number from 1-3" << endl;
