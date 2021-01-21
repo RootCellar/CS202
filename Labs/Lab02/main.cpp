@@ -13,7 +13,8 @@ void doSomethingElse(Foo &f) {
 
 //Passed by reference to const
 void doAnotherThing(const Foo &f) {
-  //f.setData(8);
+  //f.setData(8); //Can't do that!
+  f.getData();
 }
 
 Foo returnAFoo() {
@@ -40,13 +41,15 @@ int main() {
   Foo dataFoo(6);
 
   //Copy a foo
+  cout << endl << "Calling doSomething()..." << endl;
   doSomething(f);
+  cout << endl << endl;
 
   doSomethingElse(dataFoo);
 
   doAnotherThing(dataFoo);
 
-  returnAFoo();
+  auto x = returnAFoo();
   cout << endl << endl;
 
   cout << "Time for vector stuff" << endl << endl;
