@@ -51,6 +51,10 @@ public:
     _start = system_clock::now();
   }
 
+  double getElapsedSeconds() {
+    return _elapsedSeconds.count();
+  }
+
 };
 
 
