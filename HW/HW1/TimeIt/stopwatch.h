@@ -25,6 +25,11 @@ using std::random_device;
 using std::mt19937;
 using std::uniform_int_distribution;
 
+using std::search;
+using std::binary_search;
+using std::sort;
+using std::reverse;
+
 class StopWatch {
 private:
 

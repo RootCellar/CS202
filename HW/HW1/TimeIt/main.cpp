@@ -5,7 +5,7 @@
  * Using the stopwatch class to test algorithms
 */
 
-#define DATA_SIZE 10
+#define DATA_SIZE 10000
 
 
 #include "stopwatch.h"
@@ -26,6 +26,22 @@ int main() {
 
   uniform_int_distribution<> distribution(1, 1000);
 
+  vector<int> data = makeData(random, distribution);
 
+  cout << "--- Sorting ---" << endl;
+
+  StopWatch watch;
+  sort(data.begin(), data.end());
+  watch.stop();
+
+  cout << "Sort: " << watch.getElapsedSeconds() << " seconds, " << watch.getElapsedMillis() << " milliseconds" << endl;
+
+  cout << "--- Reversing ---" << endl;
+
+  watch.start();
+  reverse(data.begin(), data.end());
+  watch.stop();
+
+  cout << "Reverse: " << watch.getElapsedSeconds() << " seconds, " << watch.getElapsedMillis() << " milliseconds" << endl;
 
 }
