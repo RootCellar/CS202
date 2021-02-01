@@ -101,4 +101,48 @@ int main() {
 
   cout << "Forward List Read: " << watch.getElapsedSeconds() << endl;
 
+  //FIND
+
+  string toFind = "z";
+
+  watch.start();
+  find(data1.begin(), data1.end(), toFind);
+  watch.stop();
+
+  cout << "Vector Find: " << watch.getElapsedSeconds() << " seconds" << endl;
+
+  watch.start();
+  find(data2.begin(), data2.end(), toFind);
+  watch.stop();
+
+  cout << "List Find: " << watch.getElapsedSeconds() << " seconds" << endl;
+
+  watch.start();
+  find(data3.begin(), data3.end(), toFind);
+  watch.stop();
+
+  cout << "Forward List Find: " << watch.getElapsedSeconds() << " seconds" << endl;
+
+  //SORT
+
+  watch.start();
+  sort(data1.begin(), data1.end());
+  watch.stop();
+
+  cout << "Vector sort: " << watch.getElapsedSeconds() << " seconds" << endl;
+
+  watch.start();
+  //sort(data2.begin(), data2.end());
+  data2.sort();
+  watch.stop();
+
+  cout << "List sort: " << watch.getElapsedSeconds() << " seconds" << endl;
+
+  watch.start();
+  //sort(data3.begin(), data3.end());
+  data3.sort();
+  watch.stop();
+
+  cout << "Forward List sort: " << watch.getElapsedSeconds() << " seconds" << endl;
+
 }
