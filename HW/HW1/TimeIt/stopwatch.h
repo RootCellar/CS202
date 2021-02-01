@@ -47,6 +47,10 @@ public:
     _elapsedMillis = _end - _start;
   }
 
+  void start() {
+    _start = system_clock::now();
+  }
+
 };
 
 
