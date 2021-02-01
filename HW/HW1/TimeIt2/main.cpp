@@ -3,7 +3,7 @@
 #include <list>
 #include <fstream>
 
-#define FILE_NAME "test.txt"
+#define FILE_NAME "hamlet.txt"
 
 using std::list;
 using std::forward_list;
@@ -41,6 +41,6 @@ int main() {
   }
   watch.stop();
 
-  cout << "Vector Read: " << watch.getElapsedSeconds() << " seconds" << endl;
+  cout << "Vector Read: " << watch.getElapsedSeconds() << " seconds (" << data1.size() << " strings)"<< endl;
 
 }
