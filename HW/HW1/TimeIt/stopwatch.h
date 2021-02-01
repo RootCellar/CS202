@@ -55,6 +55,10 @@ public:
     return _elapsedSeconds.count();
   }
 
+  double getElapsedMillis() {
+    return _elapsedMillis.count();
+  }
+
 };
 
 
