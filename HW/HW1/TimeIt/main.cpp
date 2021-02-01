@@ -36,6 +36,23 @@ int main() {
 
   cout << "Sort: " << watch.getElapsedSeconds() << " seconds, " << watch.getElapsedMillis() << " milliseconds" << endl;
 
+  cout << "--- Searching ---" << endl;
+
+  watch.start();
+  find(data.begin(), data.end(), 1000);
+  watch.stop();
+
+  cout << "Search: " << watch.getElapsedSeconds() << " seconds, " << watch.getElapsedMillis() << " milliseconds" << endl;
+
+  cout << "--- Binary Searching ---" << endl;
+
+  watch.start();
+  binary_search(data.begin(), data.end(), 1000);
+  watch.stop();
+
+  cout << "Binary Search: " << watch.getElapsedSeconds() << " seconds, " << watch.getElapsedMillis() << " milliseconds" << endl;
+
+
   cout << "--- Reversing ---" << endl;
 
   watch.start();
