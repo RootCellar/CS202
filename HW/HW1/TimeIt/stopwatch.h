@@ -34,9 +34,9 @@ private:
 public:
 
   StopWatch() {
-
+    _start = system_clock::now();
   }
-  
+
 };
 
 
