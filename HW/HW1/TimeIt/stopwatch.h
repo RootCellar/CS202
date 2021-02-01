@@ -31,10 +31,20 @@ private:
   time_point<system_clock> _start;
   time_point<system_clock> _end;
 
+  duration<double> _elapsedSeconds;
+  duration<double, std::milli> _elapsedMillis;
+
 public:
 
   StopWatch() {
     _start = system_clock::now();
+  }
+
+  void stop() {
+    _end = system_clock::now();
+
+    _elapsedSeconds  = _end - _start;
+    _elapsedMillis = _end - _start;
   }
 
 };
