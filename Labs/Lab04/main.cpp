@@ -32,10 +32,14 @@ int main() {
 
   while(readString >> word) {
     toWrite += word + " ";
-    word = "";
   }
 
   cout << "Writing \"" << toWrite << "\" " << n << " times" << endl;
+
+  if(toWrite == "") {
+    cout << "C'mon, we could write something more interesting than that!" << endl;
+    return -1;
+  }
 
   ofstream fout("file.temp", ios::app);
   if(!fout) {
