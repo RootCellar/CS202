@@ -3,7 +3,7 @@
 #include <list>
 #include <fstream>
 
-#define FILE_NAME "hamlet.txt"
+#define FILE_NAME "beowulf.txt"
 
 using std::list;
 using std::forward_list;
