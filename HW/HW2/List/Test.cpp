@@ -7,9 +7,10 @@
 
 #include "catch.hpp"
 #include <list>
+#include <algorithm>
 
 using std::list;
-
+using std::find;
 
 class Mob {
 
@@ -47,5 +48,33 @@ TEST_CASE("List Tests") {
   list<Mob> stack;
 
   Mob test;
+
+  //Test Queue
+
+  Mob dummy1;
+  Mob dummy2;
+
+  queue.push_back(dummy1);
+  queue.push_back(dummy2);
+  queue.push_back(test);
+
+  auto get = queue.begin();
+  get++;
+  get++;
+
+  REQUIRE( (*get) == test );
+
+  queue.pop_front();
+
+  auto found = find(queue.begin(), queue.end(), dummy1);
+
+  REQUIRE( found == queue.end() );
+
+  //Test Stack
+
+  stack.push_back(dummy1);
+  stack.push_back(dummy2);
+
+  
 
 };
