@@ -8,6 +8,8 @@
 #include "catch.hpp"
 #include <list>
 
+using std::list;
+
 
 class Mob {
 
@@ -33,8 +35,17 @@ bool operator==(const Mob& a, const Mob& b) {
   return a.ID == b.ID;
 }
 
+bool operator!=(const Mob& a, const Mob& b) {
+  return a.ID != b.ID;
+}
+
 int Mob::IDpoint = 0;
 
 TEST_CASE("List Tests") {
+
+  list<Mob> queue;
+  list<Mob> stack;
+
+  Mob test;
 
 };
