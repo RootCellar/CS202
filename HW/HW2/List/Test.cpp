@@ -145,14 +145,9 @@ TEST_CASE("List Tests") {
   REQUIRE( didFind );
 
   //place dummy3
-  bool placed = false;
-  auto end = mobs.end()--;
-  for(auto i = mobs.begin(); i != end; i++) {
-    if( (*i) < dummy3 && (*(i++)) > dummy3 ) {
-      mobs.insert(i, dummy3);
-    }
-  }
-  if(!placed) mobs.push_back(dummy3);
+  get = mobs.begin();
+  get++; get++;
+  mobs.insert(get, dummy3);
 
   //dummy3 should be at spot 2
   get = mobs.begin();
