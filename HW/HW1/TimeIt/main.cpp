@@ -5,7 +5,7 @@
  * Using the stopwatch class to test algorithms
 */
 
-#define DATA_SIZE 10000000
+#define DATA_SIZE 10000
 
 
 #include "stopwatch.h"
