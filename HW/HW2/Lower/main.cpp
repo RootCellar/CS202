@@ -55,4 +55,12 @@ int main() {
   to_lower( s );
   cout << s << endl;
 
+  s = strdup("tESt NumBER TWO");
+  to_lower( s );
+  cout << s << endl;
+
+  s = strdup("HELLO, WORLD!");
+  to_lower( s );
+  cout << s << endl;
+
 }
