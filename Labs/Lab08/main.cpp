@@ -57,6 +57,7 @@ int main() {
   Stuff f;
   Stuff t;
 
+  //This is why we write copy constructors
   Stuff x(t);
 
   staticTest();
