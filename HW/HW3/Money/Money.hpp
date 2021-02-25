@@ -58,15 +58,21 @@ Money operator/(const Money &one, const double two) {
 }
 
 Money operator+(const Money &one, const Money &two) {
-
+  temp = one;
+  temp.value += two.value;
+  return temp;
 }
 
 Money operator-(const Money &one, const Money &two) {
-
+  temp = one;
+  temp.value -= two.value;
+  return temp;
 }
 
 Money operator*(const Money &one, const double two) {
-
+  temp = one;
+  temp.value *= two;
+  return temp;
 }
 
 Money operator*(const double two, const Money &one) {
