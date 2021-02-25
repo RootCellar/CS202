@@ -99,5 +99,13 @@ bool operator!=(const Money &one, const Money &two) {
   return !(one==two);
 }
 
+bool operator>(const Money &one, const Money &two) {
+  return one.value > two.value;
+}
+
+bool operator<(const Money &one, const Money &two) {
+  return !(one>two && one==two);
+}
+
 
 #endif
