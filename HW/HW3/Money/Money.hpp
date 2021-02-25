@@ -4,7 +4,15 @@
 
 class Money {
 
+  //Boolean Operators
   friend bool operator==(const Money &one, const Money &two);
+  friend bool operator!=(const Money &one, const Money &two);
+  friend bool operator>(const Money &one, const Money &two);
+  friend bool operator<(const Money &one, const Money &two);
+  friend bool operator>=(const Money &one, const Money &two);
+  friend bool operator<=(const Money &one, const Money &two);
+
+  //Math Operators
   friend Money operator/(const Money &one, const double two);
   friend Money operator+(const Money &one, const Money &two);
   friend Money operator-(const Money &one, const Money &two);
