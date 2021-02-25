@@ -1,6 +1,7 @@
 #ifndef MONEY_HPP
 #define MONEY_HPP
 
+#include <iostream>
 
 class Money {
 
@@ -17,6 +18,9 @@ class Money {
   friend Money operator+(const Money &one, const Money &two);
   friend Money operator-(const Money &one, const Money &two);
   friend Money operator*(const Money &one, const double two);
+
+  //Other
+  friend ostream operator<<(ostream &one, const Money &two);
 
 private:
   int value;
@@ -85,6 +89,14 @@ Money operator*(const Money &one, const double two) {
 
 Money operator*(const double two, const Money &one) {
   return one * two;
+}
+
+bool operator==(const Money &one, const Money &two) {
+  return one.value == two.value;
+}
+
+bool operator!=(const Money &one, const Money &two) {
+  return !(one==two);
 }
 
 
