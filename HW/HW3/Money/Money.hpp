@@ -44,10 +44,17 @@ public:
     return *this;
   }
 
+  Money operator*=(const double two) {
+    this.value *= two;
+    return *this;
+  }
+
 };
 
 Money operator/(const Money &one, const double two) {
-
+  temp = one;
+  temp /= two;
+  return temp;
 }
 
 Money operator+(const Money &one, const Money &two) {
@@ -60,6 +67,10 @@ Money operator-(const Money &one, const Money &two) {
 
 Money operator*(const Money &one, const double two) {
 
+}
+
+Money operator*(const double two, const Money &one) {
+  return one * two;
 }
 
 
