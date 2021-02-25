@@ -107,5 +107,13 @@ bool operator<(const Money &one, const Money &two) {
   return !(one>two && one==two);
 }
 
+bool operator>=(const Money &one, const Money &two) {
+  return one > two || one == two;
+}
+
+bool operator<=(const Money &one, const Money &two) {
+  return !(one > two);
+}
+
 
 #endif
