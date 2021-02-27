@@ -14,6 +14,7 @@ using std::string;
 using std::find;
 using std::vector;
 using std::istringstream;
+using std::getline;
 
 struct Token {
   string token;
@@ -33,7 +34,7 @@ vector<Token> readLines(istream &is) {
 
   while(true) {
 
-    is >> line;
+    getline(is, line);
     if(!is) {
       if(is.eof()) {
         //good, we're done
@@ -58,6 +59,28 @@ vector<Token> readLines(istream &is) {
 
   return toRet;
 
+}
+
+vector<string> lineToTokens(const string &line) {
+  vector<string> toRet;
+
+  istringstream is(line);
+  string token;
+
+  while(true) {
+    is >> token;
+    if(!is) {
+      if(is.eof()) {
+        break;
+      }
+      //Broken, but not much we can do
+      return toRet;
+    }
+
+    toRet.push_back(token);
+  }
+
+  return toRet;
 }
 
 #endif
