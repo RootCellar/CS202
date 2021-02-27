@@ -66,22 +66,22 @@ public:
     value += c;
   }
 
-  Money operator+=(const Money &two) {
+  Money& operator+=(const Money &two) {
     value += two.value;
     return *this;
   }
 
-  Money operator-=(const Money &two) {
+  Money& operator-=(const Money &two) {
     value -= two.value;
     return *this;
   }
 
-  Money operator/=(const double two) {
+  Money& operator/=(const double two) {
     value /= two;
     return *this;
   }
 
-  Money operator*=(const double two) {
+  Money& operator*=(const double two) {
     value *= two;
     return *this;
   }
