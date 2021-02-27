@@ -6,6 +6,7 @@
 */
 
 #include "Token.h"
+#include "stopwatch.h"
 
 #include <fstream>
 
@@ -39,10 +40,14 @@ int main(int argc, char** argv) {
   vector<Token> tokens;
   ifstream is(fileName);
 
+  StopWatch watch;
   tokens = readLines(is);
 
   if(printing) {
     printTokens(cout, tokens);
   }
+  watch.stop();
+
+  cout << "Took " << watch.getElapsedSeconds() << " seconds" << endl;
 
 }
