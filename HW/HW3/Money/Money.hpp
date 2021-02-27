@@ -2,6 +2,7 @@
 #define MONEY_HPP
 
 #include <iostream>
+#include <ostream>
 
 class Money {
 
@@ -20,7 +21,7 @@ class Money {
   friend Money operator*(const Money &one, const double two);
 
   //Other
-  friend ostream operator<<(ostream &one, const Money &two);
+  friend std::ostream operator<<(std::ostream &one, const Money &two);
 
 private:
   int value;
@@ -62,6 +63,11 @@ public:
   }
 
 };
+
+std::ostream& operator<<(std::ostream &one, const Money &two) {
+  one << "$" << (two.value/100) << "." << (two%100);
+  return one;
+}
 
 Money operator/(const Money &one, const double two) {
   temp = one;
