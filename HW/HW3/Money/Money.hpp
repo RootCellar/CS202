@@ -42,22 +42,22 @@ public:
   }
 
   Money operator+=(const Money &two) {
-    this.value += two.value;
+    value += two.value;
     return *this;
   }
 
   Money operator-=(const Money &two) {
-    this.value -= two.value;
+    value -= two.value;
     return *this;
   }
 
   Money operator/=(const double two) {
-    this.value /= two;
+    value /= two;
     return *this;
   }
 
   Money operator*=(const double two) {
-    this.value *= two;
+    value *= two;
     return *this;
   }
 
