@@ -83,4 +83,10 @@ vector<string> lineToTokens(const string &line) {
   return toRet;
 }
 
+void printTokens(ostream &os, const vector<Token> &tokens) {
+  for(Token t : tokens) {
+    os << "Line " << t.line << ", Column " << t.column << ": \"" << t.token << "\"" << std::endl;
+  }
+}
+
 #endif
