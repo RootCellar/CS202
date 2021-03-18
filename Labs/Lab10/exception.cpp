@@ -12,20 +12,22 @@ using std::vector;
 class Foo {
 private:
 
-    static int _count;
+  static int _count;
 
 public:
 
   Foo() {
-    cout << "Created a foo" << endl;
-
     _count++;
     if(_count > 5) {
       throw runtime_error("Attempted to create too many Foos (5 max)");
     }
+
+    cout << "Created a foo" << endl;
   }
 
   ~Foo() {
+    _count--;
+    
     cout << "Destroyed a foo" << endl;
   }
 };
