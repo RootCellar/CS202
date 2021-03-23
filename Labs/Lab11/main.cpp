@@ -21,7 +21,6 @@ public:
     cout << "Foo " << _id << " is being destroyed" << endl;
   }
 
-
 private:
   int _id;
 };
@@ -43,26 +42,28 @@ public:
     cout << "Destroyed Bar called " << _name << endl;
   }
 
-
 private:
   string _name;
-
 };
 
 int main() {
 
+  //Default Foo
   {
     Foo f;
   }
 
+  //Foo w/ argument
   {
     Foo f(6);
   }
 
+  //Default Bar
   {
     Bar b;
   }
 
+  //Bar w/ arguments
   {
     Bar b("Evan", 6);
   }
