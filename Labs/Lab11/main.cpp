@@ -26,6 +26,7 @@ private:
   int _id;
 };
 
+//Derived Class
 class Bar : public Foo {
 
 public:
