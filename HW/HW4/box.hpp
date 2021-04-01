@@ -2,6 +2,10 @@
 #define BOX_HPP
 
 #include <iostream>
+#include <string>
+
+using std::ostream;
+using std::string;
 
 class Box {
 private:
@@ -24,6 +28,9 @@ public:
   void setHeight(int h) {
     height = h;
   }
+
+  virtual void print(ostream &os);
+  virtual string type();
 
 };
 
