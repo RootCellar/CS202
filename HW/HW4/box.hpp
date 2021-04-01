@@ -35,8 +35,8 @@ public:
     height = h;
   }
 
-  virtual void print(ostream &os) const;
-  virtual string type() const;
+  virtual void print(ostream &os) const = 0;
+  virtual string type() const = 0;
 
 };
 
@@ -53,10 +53,20 @@ public:
   void print(ostream &os) const {
     for(int i=0; i<getWidth(); i++) os << "*";
     os << "\n";
+
+    for(int i=0; i<getHeight()-2; i++) {
+      os << "*";
+      for(int i=0; i<getWidth()-2; i++) os << " ";
+      os << "*\n";
+    }
+
+    for(int i=0; i<getWidth(); i++) os << "*";
+    os << "\n";
+
   }
 
   string type() const {
-    return "HollowBox";
+    return "Hollow";
   }
 };
 
@@ -75,7 +85,7 @@ public:
   }
 
   string type() const {
-    return "FilledBox";
+    return "Filled";
   }
 };
 
@@ -94,7 +104,7 @@ public:
   }
 
   string type() const {
-    return "CheckeredBox";
+    return "Checkered";
   }
 };
 
@@ -105,15 +115,15 @@ ostream& operator<<(ostream &os, const Box &b) {
 
 std::unique_ptr<Box> boxFactory(char c, int w, int h) {
   if(c == 'f') {
-    return make_unique<Box>(FilledBox(w, h));
+    return make_unique<FilledBox>(FilledBox(w, h));
   }
 
   if(c == 'h') {
-    return make_unique<Box>(HollowBox(w, h));
+    return make_unique<HollowBox>(HollowBox(w, h));
   }
 
   if(c == 'c') {
-    return make_unique<Box>(CheckeredBox(w, h));
+    return make_unique<CheckeredBox>(CheckeredBox(w, h));
   }
 
   return nullptr;
