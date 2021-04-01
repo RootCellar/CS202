@@ -17,6 +17,14 @@ public:
   int getWidth() { return width; }
   int getHeight() { return height; }
 
+  void setWidth(int w) {
+    width = w;
+  }
+
+  void setHeight(int h) {
+    height = h;
+  }
+
 };
 
 class HollowBox : public Box {
