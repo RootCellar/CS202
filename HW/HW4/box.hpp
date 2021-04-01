@@ -51,17 +51,19 @@ public:
   }
 
   void print(ostream &os) const {
-    for(int i=0; i<getWidth(); i++) os << "*";
+    for(int i=0; i<getWidth(); i++) os << "x";
     os << "\n";
 
     for(int i=0; i<getHeight()-2; i++) {
-      os << "*";
+      os << "x";
       for(int i=0; i<getWidth()-2; i++) os << " ";
-      os << "*\n";
+      os << "x\n";
     }
 
-    for(int i=0; i<getWidth(); i++) os << "*";
-    os << "\n";
+    if(getHeight() > 1) {
+      for(int i=0; i<getWidth(); i++) os << "x";
+      os << "\n";
+    }
 
   }
 

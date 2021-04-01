@@ -746,5 +746,8 @@ int main()
     }
     std::cout << std::endl;
 
+    HollowBox h(8, 3);
+    h.print(std::cout);
+
     return 0;
 }
