@@ -3,9 +3,11 @@
 
 #include <iostream>
 #include <string>
+#include <memory>
 
 using std::ostream;
 using std::string;
+using std::make_unique;
 
 class Box {
 private:
@@ -15,6 +17,10 @@ private:
 public:
 
   Box(int w, int h): width(w), height(h) {
+
+  }
+
+  virtual ~Box() {
 
   }
 
@@ -45,7 +51,8 @@ public:
   }
 
   void print(ostream &os) const {
-
+    for(int i=0; i<getWidth(); i++) os << "*";
+    os << "\n";
   }
 
   string type() const {
@@ -94,6 +101,22 @@ public:
 ostream& operator<<(ostream &os, const Box &b) {
   b.print(os);
   return os;
+}
+
+std::unique_ptr<Box> boxFactory(char c, int w, int h) {
+  if(c == 'f') {
+    return make_unique<Box>(FilledBox(w, h));
+  }
+
+  if(c == 'h') {
+    return make_unique<Box>(HollowBox(w, h));
+  }
+
+  if(c == 'c') {
+    return make_unique<Box>(CheckeredBox(w, h));
+  }
+
+  return nullptr;
 }
 
 #endif
