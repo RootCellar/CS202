@@ -749,5 +749,11 @@ int main()
     HollowBox h(8, 3);
     h.print(std::cout);
 
+    CheckeredBox i(8, 3);
+    i.print(std::cout);
+
+    FilledBox j(8, 3);
+    j.print(std::cout);
+
     return 0;
 }

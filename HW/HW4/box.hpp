@@ -83,7 +83,12 @@ public:
   }
 
   void print(ostream &os) const {
-
+    for(int i=0; i<getHeight(); i++) {
+      for(int j=0; j<getWidth(); j++) {
+        os << "x";
+      }
+      os << "\n";
+    }
   }
 
   string type() const {
@@ -102,7 +107,13 @@ public:
   }
 
   void print(ostream &os) const {
-
+    for(int i=0; i<getHeight(); i++) {
+      for(int j=0; j<getWidth(); j++) {
+        if(j%2 == i%2) os << "x";
+        else os << " ";
+      }
+      os << "\n";
+    }
   }
 
   string type() const {
