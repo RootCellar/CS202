@@ -29,7 +29,7 @@ void print(vector<int> v) {
 
 int main() {
 
-  cout << "Using generate() to fill a vector with numbers from successive funciton calls" << endl;
+  cout << "Using generate() to fill a vector with numbers from successive function calls" << endl;
 
   vector<int> stuff(8);
 
