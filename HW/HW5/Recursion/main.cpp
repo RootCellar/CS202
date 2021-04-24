@@ -43,6 +43,12 @@ int main() {
     cout << "fib(" << i << "): " << fib(i) << " == " << fib_loop(i) << " :fib_loop(" << i << ")" << endl;
   }
 
+  cout << endl << endl;
+
   cout << "ACK" << endl;
-  cout << ack(4, 1) << endl;
+  for(int i = 0; i < 5; i++) {
+    for(int j = 0; j < 6 - i; j++) {
+      cout << "ack(" << i << ", " << j << ") = " << ack(i, j) << endl;
+    }
+  }
 }
