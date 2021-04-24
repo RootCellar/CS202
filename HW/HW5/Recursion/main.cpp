@@ -35,11 +35,11 @@ int ack(int m, int n) {
 }
 
 int main() {
-  cout << "Recursive Fibonacci Sequence" << endl;
-  cout << fib(40) << endl;
+  cout << "Fibonacci Sequence" << endl;
 
-  cout << "Loop Fibonacci Sequence" << endl;
-  cout << fib_loop(40) << endl;
+  for(int i = 0; i < 20; i++) {
+    cout << "fib(" << i << "): " << fib(i) << " == " << fib_loop(i) << " :fib_loop(" << i << ")" << endl;
+  }
 
   cout << "ACK" << endl;
   cout << ack(4, 1) << endl;
