@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++14 -g -Wall
+CXXFLAGS = -std=c++17 -g -Wall
 LDFLAGS =
 
 # We use this to
